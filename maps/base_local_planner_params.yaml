@@ -1,0 +1,9 @@
+/move_base/TebLocalPlannerROS:
+
+  global_frame_id: world
+
+  sim_time: 1
+ 
+  footprint_model: 
+    type: vertices
+    vertices: [[-0.2,-0.1],[-0.2,0.1],[0.2,0.1],[0.2,-0.1]]

@@ -1,0 +1,20 @@
+azul
+rostopic pub -1 /goal geometry_msgs/PoseStamped '{header: { frame_id: "/world" }, pose: { position: { x: 7.1723, y: 6.2872, z: 0}, orientation: { x: 0, y: 0, z: 1, w: 0.1}}}'
+vermelh
+rostopic pub -1 /goal geometry_msgs/PoseStamped '{header: { frame_id: "/world" }, pose: { position: { x: 3.6473, y: 11.762, z: 0}, orientation: { x: 0, y: 0, z: 1, w: 0.1}}}'
+verde
+rostopic pub -1 /goal geometry_msgs/PoseStamped '{header: { frame_id: "/world" }, pose: { position: { x: 0.047328, y: 6.5622, z: 0}, orientation: { x: 0, y: 0, z: 1, w: 0.1}}}'
+
+
+
+
+recarga
+rostopic pub -1 /goal geometry_msgs/PoseStamped '{header: { frame_id: "/world" }, pose: { position: { x: 7.0473, y: 0.86223, z: 0}, orientation: { x: 0, y: 0, z: 1, w: 0.1}}}'
+
+base
+rostopic pub -1 /goal geometry_msgs/PoseStamped '{header: { frame_id: "/world" }, pose: { position: { x: 3.3467, y: 0.75631, z: 0}, orientation: { x: 0, y: 0, z: -0.0347295, w: 0.9993}}}'
+
+
+
+
+

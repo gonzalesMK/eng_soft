@@ -1,0 +1,23 @@
+<launch>
+  <master auto="start"/>
+  <param name="/use_sim_time" value="true" />  
+
+  <!-- Run the map server -->
+  <node name="map_server" pkg="map_server" type="map_server" args="$(find       AMR__2dnav)/maps/map.yaml _frame_id:=world"/>
+
+  <node name="kinecontroller" pkg="AMR__2dnav" type="kinecontroller" />
+  <node name="control" pkg="AMR__2dnav" type="control" output="screen"/>  
+  
+   <!--- Run AMCL -->
+  <!--- include file="$(find AMR__2dnav)/amcl.launch" -->
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+    <rosparam file="$(find       AMR__2dnav)/maps/costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find       AMR__2dnav)/maps/costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find       AMR__2dnav)/maps/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find       AMR__2dnav)/maps/global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find       AMR__2dnav)/maps/base_local_planner_params.yaml" command="load" />
+    <rosparam file="$(find       AMR__2dnav)/maps/move_base_params.yaml" command="load" />
+  </node>
+
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find       AMR__2dnav)/AMR.rviz" />
+</launch>
